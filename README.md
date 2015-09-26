@@ -8,7 +8,7 @@ Just an illustration of how to write a Haskell script that
 - downloads stuff from the Web
 - parses JSON using Lens
 - uncompresses GZip
-- extracts files from a tar archive
+- extracts a single file from a tar archive
 
 ## Instructions
 
@@ -16,16 +16,14 @@ Just an illustration of how to write a Haskell script that
 $ stack build
 ```
 
-To run the program directly (don't do this if you don't actually want
-to end up with a huge `stack` executable for Mac OS X in your current
-directory!):
-
-```console
-$ stack exec get-latest-stack-osx
-```
-
 To install the program as `~/.local/bin/get-latest-stack-osx`:
 
 ```console
 $ stack install
+```
+
+To run the program, downloading and extracting a huge `stack` executable for Mac OS X to standard output):
+
+```console
+$ get-latest-stack-osx > /path/to/new/stack && chmod a+x /path/to/new/stack
 ```
