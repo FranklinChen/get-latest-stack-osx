@@ -37,7 +37,7 @@ findFirstOsxUrl = firstOf $
   responseBody
   . key "assets" . _Array . traverse
   . key "browser_download_url" . _String
-  . filtered ("osx.tar.gz" `Text.isInfixOf`)
+  . filtered ("osx-x86_64.tar.gz" `Text.isInfixOf`)
   . to Text.unpack
 
 getUrlAndExtractStack :: Url -> IO ()
